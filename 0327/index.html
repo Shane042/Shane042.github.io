@@ -30,18 +30,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.10.7/sweetalert2.all.min.js"></script>
 
     <link href="https://juxinglong.github.io/static/MIS3033.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="site.css"/>
+
 </head>
 
 
 
 <body style="margin:10px;">
+
+    <div id="t1"></div>
+    <br/>
+    <button id="b1" class="btn btn-secondary">
+        Load States
+    </button>
+
+    <script src="t1.js">
+
+    </script>
+
+
+
+
+
     <div id="tbldiv"></div>
     <br/>
     <button id="btn1" class="btn btn-success">
 
         Load Data
         <span style="font-size:20px;">
-        <i class="bi bi-box-arrow-down"></i> 
+            <i class="bi bi-cloud-download "></i> 
         </span>
     </button>
 
@@ -72,7 +90,7 @@
             }
             tbldiv.innerHTML = ``;
 
-            let tbltopts =
+            let tblopts =
             {
                 data: rj,
                 pagination: { limit: 5, },
@@ -80,7 +98,7 @@
                 search: true,
             };
 
-            gridtbl = newgridjs.Grid(tblopts);
+            gridtbl = new gridjs.Grid(tblopts);
             gridtbl.render(tbldiv);
 
         };
